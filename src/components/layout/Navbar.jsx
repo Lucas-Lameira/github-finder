@@ -1,7 +1,5 @@
 import React from 'react';
-import {FiGithub} from 'react-icons/fi';
 import {FaGithub} from 'react-icons/fa';
-
 
 export default function Navbar () {
   return (
