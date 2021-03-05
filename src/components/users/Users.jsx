@@ -1,6 +1,6 @@
 //Container for all users 
 import React from 'react';
-import Spinner from '../layout/spinner';
+import Spinner from '../layout/Spinner';
 import UserItem from './UserItem'
 
 export default function Users ({loading, users}) {

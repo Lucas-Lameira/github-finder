@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import Navbar from './components/layout/Navbar';
 import Users from './components/users/Users';
+import Search from './components/users/Search';
 import './App.css';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <Navbar/>
 
       <div className="container">
+        <Search />
         <Users loading={isLoading} users={users}/>
       </div>
       
