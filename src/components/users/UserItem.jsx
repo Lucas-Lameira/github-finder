@@ -1,6 +1,7 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 
-export default function UserItem ({userInfo: {avatar_url, login, html_url}}) {  
+export default function UserItem ({userInfo: {avatar_url, login}}) {  
   return (
     <div className="card text-center">
       <img 
@@ -12,12 +13,9 @@ export default function UserItem ({userInfo: {avatar_url, login, html_url}}) {
       <h3>{login}</h3>
 
       <div>
-        <a href={html_url}
-          className="btn btn-dark btn-sm my-1"
-          target="_blank"
-        >
+        <Link to={`/user/:${login}`} className="btn btn-dark btn-sm my-1">
           More
-        </a>
+        </Link>
       </div>
     </div>
   )
