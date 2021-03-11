@@ -1,12 +1,23 @@
-import {Fragment ,useEffect} from 'react';
+import {Fragment ,useContext,useEffect} from 'react';
 import {Link} from 'react-router-dom'
 import {FiCheck, FiX} from 'react-icons/fi';
 import PropTypes from 'prop-types'
-
+import GithubContext from '../../context/github/githubContext'
 import Spinner from '../layout/Spinner'
 import Repos from '../repos/Repos';
 
-function User ({match, getUser, getUserRepos, user, loading, repos }) {
+function User ({match }) {
+  const githubContext = useContext(GithubContext)
+  const {getUser, user, loading, getUserRepos, repos} = githubContext
+  
+  useEffect(() => {
+    let parametro = String(match.params.login)
+    
+    parametro = parametro.replace(':', '');
+    getUser(parametro); //got that from path on Route in app.js path=/user/:login
+    getUserRepos(parametro);
+  }, [])//leave it empty to run only 1 time per reload
+
   const {
     name,
     avatar_url,
@@ -23,13 +34,6 @@ function User ({match, getUser, getUserRepos, user, loading, repos }) {
     company
   } = user;
 
-  useEffect(() => {
-    let parametro = String(match.params.login)
-    parametro = parametro.replace(':', '');
-    getUser(parametro); //got that from path on Route in app.js path=/user/:login
-    getUserRepos(parametro); 
-  }, [])
-  
   loading && <Spinner />
 
   return(    
@@ -119,12 +123,7 @@ function User ({match, getUser, getUserRepos, user, loading, repos }) {
   );
 }
 
-User.prototype = {
-  getUser: PropTypes.func.isRequired,
-  getUserRepos: PropTypes.func.isRequired,
-  user: PropTypes.object.isRequired,
-  loading: PropTypes.bool.isRequired,
-  repos: PropTypes.array.isRequired,
+User.prototype = {  
   match: PropTypes.string.isRequired
 }
 

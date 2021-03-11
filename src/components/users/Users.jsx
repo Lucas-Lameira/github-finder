@@ -1,13 +1,15 @@
 //Container for all users 
-import React from 'react';
+import React, { useContext } from 'react';
 import Spinner from '../layout/Spinner';
 import UserItem from './UserItem'
+import GithubContext from '../../context/github/githubContext'
 
-export default function Users ({loading, users}) {
+function Users () {
+  const githubContext = useContext(GithubContext); //remember to check the values in the provider, loading and users are comming from there
+  const {loading, users} = githubContext;
+
   if(loading) {
-    return (      
-      <Spinner/>
-    ) 
+    return (<Spinner/>) 
   }else{
     return(
       <div style={UserStyle}>
@@ -19,8 +21,11 @@ export default function Users ({loading, users}) {
   }
 }
 
+//testing ways to style things
 const UserStyle = {
   display: 'grid',
   gridTemplateColumns: 'repeat(3, 1fr)',
   gridGap: '1rem'
 }
+
+export default Users

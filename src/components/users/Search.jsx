@@ -1,7 +1,17 @@
-import React, {useState} from 'react';
-import PropTypes from 'prop-types';
+import React, {useContext, useState} from 'react';
+import GithubContext from '../../context/github/githubContext'
+import AlertContext from '../../context/alert/alertContext';
 
-function Search ({handleAlert, showClearButton, searchUsers, clearUsers}) {
+function Search () {
+
+  //github context
+  const githubContext = useContext(GithubContext);
+  const {searchUsers, clearUsers, users} = githubContext;
+
+  //alert context
+  const alertContext = useContext(AlertContext)
+  const {handleAlert} = alertContext;
+
   const [text, setText] = useState('');
 
   //update the state on user input change
@@ -32,7 +42,7 @@ function Search ({handleAlert, showClearButton, searchUsers, clearUsers}) {
         />
         <input type="submit" value="Search" className="btn btn-dark btn-block"/>
       </form>
-      {showClearButton && (
+      {users.length > 0 && (
         <button className="btn btn-light btn-block" onClick={clearUsers}>
           Clear
         </button>
@@ -41,10 +51,4 @@ function Search ({handleAlert, showClearButton, searchUsers, clearUsers}) {
   )
 }
 
-Search.prototype = {
-  searchUsers: PropTypes.func.isRequired,
-  clearUsers: PropTypes.func.isRequired,
-  showClearButton: PropTypes.bool.isRequired,
-  handleAlert: PropTypes.func.isRequired
-}
 export default Search
