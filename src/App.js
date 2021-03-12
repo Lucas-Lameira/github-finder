@@ -7,7 +7,7 @@ import Alert from './components/layout/Alert';
 import About from './components/pages/About';
 import User from './components/users/User';
 import NotFound from './components/pages/NotFound'
-import './App.css';
+import './styles/global.css';
 
 import GithubState from './context/github/GithubState';
 import AlertState from './context/alert/AlertState';
@@ -17,9 +17,9 @@ function App() {
     <GithubState>
       <AlertState>
         <BrowserRouter>
-          <div className="App">
+          <div >
             <Navbar/>
-            <div className="container">              
+            <div>              
               <Alert/>          
               <Switch>
                 <Route exact path="/" component={Home}/>

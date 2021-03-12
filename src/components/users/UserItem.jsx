@@ -1,22 +1,19 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import styles from '../../styles/components/UserItem.module.css';
 
 export default function UserItem ({userInfo: {avatar_url, login}}) {  
   return (
-    <div className="card text-center">
+    <div className={styles.userItemContainer}>
       <img 
         src={avatar_url}
-        alt="github user profile image"
-        className="round-img"
-        style={{width: '60px'}}
+        alt="github user profile image"                
       />
       <h3>{login}</h3>
-
-      <div>
-        <Link to={`/user/:${login}`} className="btn btn-dark btn-sm my-1">
-          More
-        </Link>
-      </div>
+      
+      <Link to={`/user/:${login}`}>
+        More
+      </Link>      
     </div>
   )
 }

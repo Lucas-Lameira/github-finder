@@ -2,8 +2,9 @@ import React, {useContext, useState} from 'react';
 import GithubContext from '../../context/github/githubContext'
 import AlertContext from '../../context/alert/alertContext';
 
-function Search () {
+import styles from '../../styles/components/Search.module.css';
 
+function Search () {
   //github context
   const githubContext = useContext(GithubContext);
   const {searchUsers, clearUsers, users} = githubContext;
@@ -31,22 +32,23 @@ function Search () {
   }
 
   return(
-    <div>
-      <form className="form" onSubmit={handleSubmit}>
+    <div className={styles.container}>
+      <form onSubmit={handleSubmit} className={styles.formContainer}>
         <input 
           type="text" 
           name="text" 
           placeholder="Type to search for a github users..."
           onChange={inputValueChange}     
-          value={text}  
+          value={text}           
         />
-        <input type="submit" value="Search" className="btn btn-dark btn-block"/>
+        <input type="submit" value="Search"/>
       </form>
-      {users.length > 0 && (
-        <button className="btn btn-light btn-block" onClick={clearUsers}>
+
+    {/*   {users.length > 0 && (
+        <button onClick={clearUsers} className={styles.clearButton}>
           Clear
         </button>
-      )}
+      )} */}
     </div>
   )
 }

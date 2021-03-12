@@ -38,18 +38,17 @@ function User ({match }) {
 
   return(    
     <Fragment>
-      <Link to="/" className="btn btn-light">Back to search</Link>
+      <Link to="/">Back to search</Link>
        <span>
         Hirable: {''}        
       </span>
       {hireable ? <FiCheck color="green"/> : <FiX  color="red"/>}
       
-      <div className="card grid-2">
-        <div className="all-center">
+      <div>
+        <div >
           <img 
             src={avatar_url} 
             alt="Avatar image from girhub" 
-            className="round-img" 
             style={{width: '150px'}}
           />
 
@@ -65,7 +64,7 @@ function User ({match }) {
             </Fragment>
           )}
 
-          <a href={html_url} className="btn btn-dark my-1">
+          <a href={html_url}>
             Visit Github profile
           </a>
 
@@ -100,20 +99,20 @@ function User ({match }) {
         </div>
       </div>
 
-      <div className="card text-center">
-        <div className="badge badge-primary">
+      <div>
+        <div >
           Followers: {followers}
         </div>
 
-        <div className="badge badge-success">
+        <div>
           Following: {following}
         </div>
 
-        <div className="badge badge-light">
+        <div >
           Public Repos: {public_repos}
         </div>
 
-        <div className="badge badge-dark">
+        <div>
           Public Gists: {public_gists}
         </div>
       </div>

@@ -8,7 +8,7 @@ export default function Alert () {
   return (
 
     alert !== null && (
-      <div className={`alert alert-${alert.classType}`}>
+      <div /* className={`alert alert-${alert.classType}`} */>
         <FiAlertCircle /> {alert.message}
       </div>
     )

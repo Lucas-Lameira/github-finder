@@ -1,0 +1,72 @@
+.container{ 
+  width: 70%;
+  margin: 0 auto 1.5rem;  
+}
+
+.formContainer{    
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+} 
+
+.formContainer input, button{
+  height: 2.5rem;
+}
+
+.formContainer input:first-child {
+  padding: 8px;
+  width: 70%;
+  background: linear-gradient(to right, var(--background), var(--blue));
+  border:none;
+  outline: none;
+  font-size: 1rem;
+  /* border-radius: 0 0px 100px 0 ; */
+}
+
+.formContainer input::placeholder{
+  font-size: 0.8rem;
+}
+
+.formContainer input:last-child{
+  width: 30%;
+  color: var(--text);  
+  background: var(--blue);
+  border: none;
+  /* border-radius: 100px 0px 100px 0px; */
+  border-radius: 4px;
+  margin-left:1px;
+  outline: none;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 
+.clearButton{
+  width: 14.7rem;  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.1rem auto 1rem;
+  background: var(--btn-red);
+  border: none;
+  color: var(--text);  
+  border-radius: 8px;
+} */
+
+@media screen and (min-width: 500px){  
+  .formContainer{      
+    flex-direction: column;  
+  } 
+
+  .formContainer input:first-child {
+    width: 100%;        
+    margin-bottom: 0.2rem;
+  }
+
+  .formContainer input:last-child{
+    width: 100%;    
+  }
+}
+

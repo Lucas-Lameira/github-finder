@@ -1,0 +1,64 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing:border-box;
+}
+
+:root{
+  --background:#fff;
+  --text:rgb(255, 255, 255);
+  --blue-light: rgba(156, 228, 246, 0.863);
+  --blue: rgb(68, 207, 241);
+  --blue-dark: rgb(1, 197, 246);
+  --btn-dark:#000;
+  --btn-red:rgb(182, 35, 35);
+}
+
+html {
+  font-size: 87.5%; /*15px*/
+  font-family: 'Roboto', sans-serif;
+}
+
+body{
+  background: var(--background);
+}
+
+a{
+  text-decoration: none;
+}
+
+button{
+  cursor: pointer;
+}
+
+ul{
+  list-style: none;
+}
+
+
+/* if the screen is above 500px
+Instead of changing styles when the width gets smaller than 768px, we should change the design when the width gets larger than 768px.
+https://www.w3schools.com/css/css_rwd_mediaqueries.asp
+*/
+@media screen and (min-width: 768px){
+  html{
+    font-size: 93.75%; /* 16px */
+  }
+
+  /* body {
+    background: red;
+  } */
+}
+
+
+/* if the screen is above 1080px and up*/
+@media screen and (min-width: 900px){
+  html{
+    font-size: 100%; /* 16px */
+  }
+
+ /*  body {
+    background: green;
+  } */
+}
+
