@@ -1,0 +1,8 @@
+div.alert {
+  background: var(--background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: red;
+  margin-bottom: -25PX;
+}

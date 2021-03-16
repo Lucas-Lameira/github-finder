@@ -1,0 +1,19 @@
+.repoItemContainer{
+  padding: 1rem;  
+  width: 98%;
+  margin: 4px 0rem;
+  border-radius: 2px;
+  background: linear-gradient(to right, var(--blue-dark), var(--blue-light));
+}
+
+.repoItemContainer:first-child{
+  margin-top: 1px;
+}
+
+.repoItemContainer h3{
+  font-size: 1rem;
+}
+
+.repoItemContainer a{
+  color: var(--text);
+}

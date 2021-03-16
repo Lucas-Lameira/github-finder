@@ -7,16 +7,19 @@
 :root{
   --background:#fff;
   --text:rgb(255, 255, 255);
+  --soft-text: rgba(0, 0, 0, 0.308);
   --blue-light: rgba(156, 228, 246, 0.863);
   --blue: rgb(68, 207, 241);
   --blue-dark: rgb(1, 197, 246);
   --btn-dark:#000;
   --btn-red:rgb(182, 35, 35);
+  --green: rgb(25, 251, 25);
 }
 
 html {
   font-size: 87.5%; /*15px*/
   font-family: 'Roboto', sans-serif;
+  scroll-behavior: smooth;
 }
 
 body{
@@ -25,6 +28,7 @@ body{
 
 a{
   text-decoration: none;
+  color: inherit;
 }
 
 button{

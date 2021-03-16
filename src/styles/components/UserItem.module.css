@@ -10,7 +10,8 @@
   width: 70%;
   line-height: 1.4;
   border-radius: 4px;
-  box-shadow: 1px 1px 8px var(--blue-light); 
+  box-shadow: 1px 1px 8px var(--blue-light);
+  margin-bottom: 1rem; 
 }
 
 .userItemContainer img {  
@@ -40,5 +41,6 @@
 @media screen and (min-width: 500px) {
   .userItemContainer{   
     width: 100%;    
+    margin-bottom: 0;
   }
 }

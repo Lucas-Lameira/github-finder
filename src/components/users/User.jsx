@@ -1,10 +1,13 @@
 import {Fragment ,useContext,useEffect} from 'react';
-import {Link} from 'react-router-dom'
-import {FiCheck, FiX} from 'react-icons/fi';
+import {FiCheck, FiX, FiUser, FiMapPin} from 'react-icons/fi';
+import {FaBuilding, FaBlog} from 'react-icons/fa';
 import PropTypes from 'prop-types'
 import GithubContext from '../../context/github/githubContext'
 import Spinner from '../layout/Spinner'
 import Repos from '../repos/Repos';
+
+import styles from '../../styles/components/User.module.css';
+
 
 function User ({match }) {
   const githubContext = useContext(GithubContext)
@@ -37,88 +40,98 @@ function User ({match }) {
   loading && <Spinner />
 
   return(    
-    <Fragment>
-      <Link to="/">Back to search</Link>
-       <span>
-        Hirable: {''}        
-      </span>
-      {hireable ? <FiCheck color="green"/> : <FiX  color="red"/>}
-      
-      <div>
-        <div >
+    <main className={styles.userContainer}>
+      <section className={styles.userProfileInfo}>
+        <div className={styles.userBasicInfo}>
           <img 
             src={avatar_url} 
-            alt="Avatar image from girhub" 
-            style={{width: '150px'}}
-          />
-
+            alt="Avatar image from girhub"             
+          />          
           <h1>{name}</h1>
-          <p>Location: {location}</p>
+          <span>
+            <a href={html_url}>
+              <div>
+                <FiUser />
+              </div>
+              <p> {login}</p>
+            </a>
+          </span>
         </div>
 
-        <div>
+        <div className={styles.userGeneralInfo}>     
+
+        {
+          hireable ? (
+            <span className={styles.hirable}style={{background: '#93FF61'}}>
+              Hirable: <FiCheck color="green" />            
+            </span>     
+          ):(
+            <span className={styles.hirable} style={{background: 'rgb(182, 35, 35)'}}>
+              Hirable: <FiX  color="white" size={28}/>
+            </span>     
+          )
+        }
+                          
           {bio && (
-            <Fragment>
+            <div className={styles.bio}>
               <h3>Bio</h3>
               <p>{bio}</p>
-            </Fragment>
+            </div>
           )}
-
-          <a href={html_url}>
-            Visit Github profile
-          </a>
-
-          <ul>
+     
+          <ul>            
             <li>
-              {login && (
-                <Fragment>
-                  <strong>Username: {login}</strong>
-                </Fragment>
+              {company && (                
+                <strong className={styles.iconBlock}>
+                  <FaBuilding />
+                  <p>
+                    {company}
+                  </p>
+                </strong>                
               )}
+              <strong className={styles.iconBlock}>
+                <FiMapPin />
+                <p>
+                  {location}            
+                </p>
+              </strong>            
             </li>
 
-            <li>
-              {company && (
-                <Fragment>
-                  <strong>Company: {company}</strong>
-                </Fragment>
-              )}
-            </li>
-
-            <li>
-              {blog && (
-                <Fragment>
-                  <strong>
-                    Blog: {' '}
-                  </strong>
-                  <a href={blog}>{blog}</a>
-                </Fragment>
+            <li >
+              {blog && (              
+                <strong className={styles.blogItem}>
+                  <FaBlog />        
+                  <a href={blog}>{blog}</a>                
+                </strong>
               )}
             </li>
           </ul>
         </div>
-      </div>
+      </section>
 
-      <div>
-        <div >
+      <section className={styles.userNumberInfo}>
+        <div className={styles.userFollowers}>
           Followers: {followers}
         </div>
 
-        <div>
+        <div className={styles.userFollowing}>
           Following: {following}
         </div>
 
-        <div >
+        <div className={styles.userPublicRepos}>
           Public Repos: {public_repos}
         </div>
 
-        <div>
+        <div className={styles.userPublicGists}>
           Public Gists: {public_gists}
         </div>
-      </div>
+      </section>
 
-      <Repos repos={repos} />
-    </Fragment>
+      <h4>Latest repositories</h4>          
+      <section className={styles.reposContainer}>
+        <Repos repos={repos} />
+      </section>
+    </main>
   );
 }
 
@@ -127,3 +140,9 @@ User.prototype = {
 }
 
 export default User
+
+
+/* 
+
+
+*/

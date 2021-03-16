@@ -44,11 +44,11 @@ function Search () {
         <input type="submit" value="Search"/>
       </form>
 
-    {/*   {users.length > 0 && (
+      {users.length > 0 && (
         <button onClick={clearUsers} className={styles.clearButton}>
           Clear
         </button>
-      )} */}
+      )}
     </div>
   )
 }

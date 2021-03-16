@@ -1,6 +1,6 @@
 .container{ 
   width: 70%;
-  margin: 0 auto 1.5rem;  
+  margin: 2rem auto 1.5rem;  
 }
 
 .formContainer{    
@@ -19,8 +19,7 @@
   background: linear-gradient(to right, var(--background), var(--blue));
   border:none;
   outline: none;
-  font-size: 1rem;
-  /* border-radius: 0 0px 100px 0 ; */
+  font-size: 1rem;  
 }
 
 .formContainer input::placeholder{
@@ -31,29 +30,29 @@
   width: 30%;
   color: var(--text);  
   background: var(--blue);
-  border: none;
-  /* border-radius: 100px 0px 100px 0px; */
+  border: none;  
   border-radius: 4px;
   margin-left:1px;
   outline: none;
-  font-size: 1.2rem;
+  font-size: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* 
+
 .clearButton{
-  width: 14.7rem;  
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0.1rem auto 1rem;
-  background: var(--btn-red);
-  border: none;
+  position: fixed;
+  top: 95%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;   
   color: var(--text);  
-  border-radius: 8px;
-} */
+  background: var(--btn-red);
+  border: none;  
+  border-radius: 4px;
+  font-size: 1rem; 
+} 
 
 @media screen and (min-width: 500px){  
   .formContainer{      
@@ -67,6 +66,11 @@
 
   .formContainer input:last-child{
     width: 100%;    
+  }
+
+  .clearButton{
+    position: relative;
+    margin-top: 1.6rem;
   }
 }
 

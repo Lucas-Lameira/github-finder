@@ -1,0 +1,154 @@
+.userContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;  
+  padding: 0.5rem;
+}
+
+/* ==============================
+   ==========BASIC INFO==========
+   ==============================*/
+.userContainer .userProfileInfo .userBasicInfo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  border-bottom: 1px solid rgba(0, 0, 0, 0.192);
+  border-top: 1px solid rgba(0, 0, 0, 0.082);
+  padding: 1rem;
+}
+
+.userContainer .userProfileInfo .userBasicInfo img{
+  width: 8rem;
+  border-radius: 50%;
+  margin-bottom: 8px;
+}
+
+.userContainer .userProfileInfo .userBasicInfo h1{
+  font-size: 1.4rem;
+  margin-bottom: 6px;
+}
+
+.userContainer .userProfileInfo .userBasicInfo span a{
+  display: flex;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.671);
+}
+
+.userContainer .userProfileInfo .userBasicInfo span a:hover{
+  color: var(--blue);
+}
+
+.userContainer .userProfileInfo .userBasicInfo span a div{
+  margin-top: 1.2px;
+}
+
+/* ==============================
+   ==========GENERAL INFO==========
+   ==============================*/
+.userContainer .userProfileInfo .userGeneralInfo{
+  padding:1rem 0rem;
+}
+
+/* HIRABLE */
+.userContainer .userProfileInfo .userGeneralInfo .hirable{  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15rem;
+  margin: 0 auto;
+  padding: 0.5rem;
+  border-radius: 2px;
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* BIO */
+.userContainer .userProfileInfo .userGeneralInfo .bio {
+  padding: 0.5rem 0;
+}
+
+.userContainer .userProfileInfo .userGeneralInfo .bio h3{
+  font-size: 1.2rem;
+  color: var(--soft-text);
+  margin-bottom: 8px;
+}
+
+.userContainer .userProfileInfo .userGeneralInfo .bio p{
+  line-height: 1.4;
+}
+
+/* Ul INFOS */
+.userContainer .userProfileInfo .userGeneralInfo ul>:first-child{
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 1rem;
+ padding: 1rem 0;
+}
+
+.userContainer .userProfileInfo .userGeneralInfo .iconBlock{
+  display: flex;
+  align-items: center;
+}
+.userContainer .userProfileInfo .userGeneralInfo .iconBlock p, a{
+  margin-left: 2px;
+  font-size:0.8rem;
+}
+
+/* followers, following, public gists, public repos */
+.userContainer .userNumberInfo{  
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.2rem;  
+  margin:1rem 0;
+  width: 95%;  
+}
+
+.userContainer .userNumberInfo div{
+  font-size: 0.8rem;
+  padding: 0.4rem;
+  border-radius: 2px;
+  font-weight: bold;  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+}
+
+.userContainer .userNumberInfo .userFollowers{
+  background: var(--blue-dark);
+}
+
+.userContainer .userNumberInfo .userFollowing{
+  background: var(--green);
+}
+
+.userContainer .userNumberInfo .userPublicRepos{
+  background: var(--btn-dark);
+}
+
+.userContainer .userNumberInfo .userPublicGists{
+  background: var(--btn-red);
+}
+
+/* repos container*/
+.userContainer h4{
+  color:var(--soft-text);
+  width: 95%;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: -2px;
+  font-size: 0.8rem;
+}
+.userContainer .reposContainer{
+  padding: 0rem 1rem 1rem;
+  width: 100%;
+}
+
+@media screen and (min-width: 475px){
+  .userContainer .userNumberInfo{    
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }        
+}
