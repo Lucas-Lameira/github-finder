@@ -17,7 +17,7 @@ After cloning, follow the commands in **Usage - development mode**
 ### Usage - development mode
 on the root folder, run the following commands to install dependencies 
 ```yarn 
- yarn add
+ yarn install
 ```
 once the dependencies are installed, run:
 ```yarn 
