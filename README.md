@@ -23,7 +23,8 @@ once the dependencies are installed, run:
 ```yarn 
  yarn start
 ```
-after yarn start, it should open in http://localhost:3000
+after yarn start, it should open in http://localhost:3000 . **For some reason github is changing the spinner.jsx file is lowercase, so change it to "Spinner.jsx**
+
 
 ## Production
 This app is live on 
